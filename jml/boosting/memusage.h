@@ -15,7 +15,7 @@ namespace std {
 template<class Key, class Data, class Compare, class Alloc> class map;
 template<class First, class Second> class pair;
 template<class T, class Alloc> class vector;
-template<class Char, class Traits, class Alloc> class basic_string;
+//template<class Char, class Traits, class Alloc> class basic_string;
 
 };
 

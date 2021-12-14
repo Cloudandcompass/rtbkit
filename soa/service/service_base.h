@@ -197,7 +197,8 @@ struct ConfigurationService {
         {
             if (!data)
                 throw ML::Exception("triggered unused watch");
-            if (!data->watchReferences <= 0)
+            //TODO Greg check this
+            if ((!data->watchReferences) <= 0)
                 return;
             ExcAssert(data);
             data->onChange(path, change);

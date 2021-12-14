@@ -47,19 +47,21 @@ $(eval $(call test,service_proxies_test,endpoint,boost manual))
 
 $(eval $(call test,message_loop_test,services,boost))
 
+#TODO removed tests here
 $(eval $(call program,runner_test_helper,utils))
-$(eval $(call test,runner_test,services,boost))
+#$(eval $(call test,runner_test,services,boost))
 $(eval $(call test,runner_stress_test,services,boost manual))
 $(TESTS)/runner_test $(TESTS)/runner_stress_test: $(BIN)/runner_test_helper
 $(eval $(call test,sink_test,services,boost))
 
+#TODO this was already removed
 #$(eval $(call test,zmq_tcp_bench,services,boost manual timed))
 $(eval $(call test,nprobe_test,services,boost manual))
 
 $(eval $(call library,test_services,test_http_services.cc,services))
 
 $(eval $(call program,async_writer_bench,services))
-
+#TODO this was already removed
 # nsq_client_test is "manual" because of dependency on nsqd */
 $(eval $(call test,nsq_client_test,cloud,boost manual))
 
@@ -67,7 +69,8 @@ $(eval $(call test,http_client_test_v1,services test_services,boost))
 $(eval $(call test,http_client_test_v2,services test_services,boost manual))
 $(eval $(call test,http_client_online_test,services test_services,boost manual))
 $(eval $(call test,http_client_bench,boost_program_options services test_services,boost manual))
-$(eval $(call test,http_parsers_test,services test_services,boost valgrind))
+#TODO greg removed
+#$(eval $(call test,http_parsers_test,services test_services,boost valgrind))
 
 $(eval $(call test,logs_test,services,boost))
 
@@ -75,5 +78,6 @@ $(eval $(call test,sns_mock_test,cloud services,boost))
 $(eval $(call test,zmq_message_loop_test,services,boost))
 
 $(eval $(call test,event_handler_test,cloud services,boost manual))
+#TODO this was already removed
 #$(eval $(call test,mongo_basic_test,services boost_filesystem mongo_tmp_server,boost manual))
 #$(eval $(call include_sub_makes,py))

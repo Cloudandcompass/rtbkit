@@ -105,7 +105,8 @@ struct LeveldbPendingPersistence : public PendingPersistence {
         leveldb::WriteOptions options;
         leveldb::Status status = db->Put(options, key, value);
         if (!status.ok()) {
-            throw ML::Exception("Writing to leveldb: " + status.ToString());
+            //TODO greg removed status.ToString() call to make life easier
+            throw ML::Exception("Writing to leveldb: status.ToString()");
         }
     }
 

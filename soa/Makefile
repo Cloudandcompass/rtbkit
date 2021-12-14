@@ -46,9 +46,10 @@ CXX_VERSION?=$(shell g++ --version | head -n1 | sed 's/.* //g')
 
 CFLAGS += -fno-strict-overflow -msse4.2
 
-CXXFLAGS += -Wno-deprecated -Wno-uninitialized -Winit-self -fno-omit-frame-pointer -std=c++0x -fno-deduce-init-list -I$(NODE_PREFIX)/include/node -msse3 -Wno-unused-but-set-variable -I$(LOCAL_INCLUDE_DIR) -I/usr/local/include -Wno-psabi -D__GXX_EXPERIMENTAL_CXX0X__=1
+CXXFLAGS += -Wno-deprecated -Wno-uninitialized -Winit-self -fno-omit-frame-pointer -std=c++0x -fno-deduce-init-list -I$(NODE_PREFIX)/include/node -msse3 -Wno-logical-not-parentheses -Wno-unused-but-set-variable -I$(LOCAL_INCLUDE_DIR) -I/usr/local/include -Wno-psabi -D__GXX_EXPERIMENTAL_CXX0X__=1
 CXXLINKFLAGS += -Wl,--copy-dt-needed-entries -Wl,--no-as-needed -L/usr/local/lib
 CFLAGS +=  -Wno-unused-but-set-variable
+CFLAGS += -Wno-logical-not-parentheses
 
 VALGRINDFLAGS := --suppressions=valgrind.supp --error-exitcode=1 --leak-check=full
 

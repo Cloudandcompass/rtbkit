@@ -15,7 +15,7 @@
 #include "config_impl.h"
 #include "jml/algebra/multi_array_utils.h"
 #include "jml/utils/pair_utils.h"
-
+#include <cmath>
 
 using namespace std;
 using namespace DB;
@@ -150,7 +150,7 @@ predict(const Feature_Set & feature_set,
             while (f < fe) {
                 float val = feature_set[f].second;
                 ++f;
-                if (isnan(val)) continue;  // missing
+                if (std::isnan(val)) continue;  // missing
                 it = first;
             
                 /* Go through each rule. */
